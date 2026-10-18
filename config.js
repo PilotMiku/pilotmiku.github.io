@@ -6,5 +6,5 @@ window.SITE_CONFIG = {
   // 填写完整地址，例如 "https://github.com/your-username"。
   github: "https://github.com/PilotMiku",
   // 每张摄影作品的停留时间，单位为毫秒。
-  slideshowInterval: 7000
+  slideshowInterval: 3000
 };
