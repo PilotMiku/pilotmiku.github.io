@@ -19,6 +19,8 @@ window.SITE_CONFIG = {
 
 正文直接修改 `index.html`；配色、间距和响应式布局在 `styles.css`。当前是个人简介与摄影展示页，还没有文章管理系统。
 
+页面末尾的“我的开源项目”展示 BlueDesk、Local-NEUMathe（已停止维护）和知行学习（KnowActAcademy）的 GitHub 仓库链接。项目名称、简介、维护状态及链接在 `index.html` 的 `#projects` 区域修改。
+
 ## 照片与轮播
 
 - 首页个人照使用 `images/self- portrait.jpg`，文件名中包含一个空格，网页路径已经编码处理。可以用同名图片替换。
