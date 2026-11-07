@@ -32,16 +32,6 @@
 }
 .project-card h3 { margin-top: 15px; font-size: 20px; line-height: 1.5; overflow-wrap: anywhere; }
 .project-card p { margin-top: 12px; margin-bottom: 17px; font-size: 13px; color: var(--muted); }
-.project-status {
-  margin-bottom: 20px;
-  padding: 4px 9px;
-  border: 1px solid #dfc8b8;
-  border-radius: 2px;
-  background: #f0e6dc;
-  color: #855035;
-  font-size: 11px;
-  line-height: 1.6;
-}
 .project-link {
   display: flex;
   align-items: center;
