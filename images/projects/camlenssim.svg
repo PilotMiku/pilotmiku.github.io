@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#dfe7d8"/>
+  <g fill="none" stroke="#819570" stroke-width="1" opacity=".4"><path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/></g>
+  <g fill="none" stroke="#507252" stroke-width="2"><path d="M62 100 285 180 578 100M62 260 285 180 578 260M62 180H578"/><ellipse cx="285" cy="180" rx="25" ry="111" fill="#f7f7ef" fill-opacity=".7"/><circle cx="445" cy="180" r="64"/><circle cx="445" cy="180" r="45" stroke-dasharray="5 7"/></g>
+  <circle cx="285" cy="180" r="7" fill="#b65e38"/>
+  <g fill="#203b2d" font-family="monospace"><text x="32" y="38" font-size="12" letter-spacing="3">CAM LENS SIM</text><text x="32" y="330" font-size="11" letter-spacing="2">FOCAL LENGTH / APERTURE / DEPTH OF FIELD</text></g>
+</svg>
