@@ -297,7 +297,7 @@
 .site-header { height: auto; min-height: 100px; padding-block: 22px; gap: 20px; flex-wrap: wrap; }
 .site-header nav { flex-wrap: wrap; row-gap: 12px; }
 
-/* Project covers are illustrations except for the retained KnowAct screenshot. */
+/* Project covers show screenshots of each website homepage. */
 .project-card { overflow: hidden; }
 .project-cover { display: block; width: calc(100% + 54px); margin: -27px -27px 23px; overflow: hidden; border-bottom: 1px solid var(--line); }
 .project-cover img { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover; object-position: top; transition: transform .3s; }
