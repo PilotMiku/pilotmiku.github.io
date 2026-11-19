@@ -2,7 +2,7 @@
   "use strict";
   const config = window.SITE_CONFIG || {};
   const name = typeof config.name === "string" && config.name.trim() ? config.name.trim() : "CanoeChen";
-  const description = "我来自重庆，在东北大学读书。这里放了我拍的照片和写的开源项目。";
+  const description = "重庆人，东北大学在读。喜欢拍照，也写代码；这里放着我拍的照片和写过的项目。";
   document.querySelectorAll("[data-name]").forEach(element => { element.textContent = name; });
   document.title = `${name} 的主页`;
   document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach(element => { element.content = description; });
