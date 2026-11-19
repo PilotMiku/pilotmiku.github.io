@@ -24,18 +24,22 @@
   <title>CanoeChen 的主页</title>
   <link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/x-icon">
   <link rel="apple-touch-icon" href="./images/site-emblem.png" sizes="180x180">
-  <link rel="stylesheet" href="./styles.css?v=9">
+  <link rel="stylesheet" href="./styles.css?v=10">
   <script src="./config.js" defer></script>
   <script src="./photos.js?v=3" defer></script>
-  <script src="./script.js?v=4" defer></script>
+  <script src="./script.js?v=5" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳转到正文</a>
+  <a class="brand mobile-brand wrap" href="#" aria-label="返回首页"><img class="brand-icon" src="./images/site-emblem.png" alt="" width="34" height="34"><span data-name>CanoeChen</span></a>
   <header id="site-header" class="site-header wrap surface-glass">
     <a class="brand" href="#" aria-label="返回首页"><img class="brand-icon" src="./images/site-emblem.png" alt="" width="34" height="34"><span data-name>CanoeChen</span></a>
-    <button type="button" id="site-menu" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" hidden>菜单</button>
     <nav id="site-nav" aria-label="主导航">
-      <a href="#about">关于</a><a href="#journey">编程</a><a href="#interests">摄影</a><a href="#projects">项目</a><a class="nav-contact" href="#contact">联系</a>
+      <a href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/></svg>关于</a>
+      <a href="#journey"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-14-4 16"/></svg>编程</a>
+      <a href="#interests"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h4l2-3h4l2 3h4a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><circle cx="12" cy="13" r="3"/></svg>摄影</a>
+      <a href="#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg>项目</a>
+      <a href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m5 8 7 5 7-5"/></svg>联系</a>
     </nav>
   </header>
 

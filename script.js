@@ -24,28 +24,16 @@
   } catch { /* 配置无效时保留静态联系方式。 */ }
 
   const siteHeader = document.getElementById("site-header");
-  const siteMenu = document.getElementById("site-menu");
   const siteNav = document.getElementById("site-nav");
-  const setMenuOpen = open => { siteMenu.setAttribute("aria-expanded", String(open)); };
-  const isMenuOpen = () => siteMenu.getAttribute("aria-expanded") === "true";
-  siteMenu.addEventListener("click", () => setMenuOpen(!isMenuOpen()));
-  siteNav.addEventListener("click", event => {
-    if (event.target.closest("a")) setMenuOpen(false);
-  });
-  siteHeader.addEventListener("keydown", event => {
-    if (event.key !== "Escape" || !isMenuOpen()) return;
-    event.preventDefault();
-    setMenuOpen(false);
-    siteMenu.focus();
-  });
-  siteHeader.addEventListener("focusout", event => {
-    if (!siteHeader.contains(event.relatedTarget)) setMenuOpen(false);
-  });
-  document.addEventListener("click", event => {
-    if (isMenuOpen() && !siteHeader.contains(event.target)) setMenuOpen(false);
-  });
-  window.matchMedia("(max-width: 700px)").addEventListener("change", () => setMenuOpen(false));
-  siteMenu.hidden = false;
+  const sectionLinks = siteNav.querySelectorAll("a");
+  function updateCurrentSection() {
+    sectionLinks.forEach(link => {
+      if (link.hash === window.location.hash) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("hashchange", updateCurrentSection);
+  updateCurrentSection();
 
   if ("IntersectionObserver" in window) {
     const navObserver = new IntersectionObserver(([entry]) => {

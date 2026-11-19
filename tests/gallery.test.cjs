@@ -59,6 +59,7 @@ function setup({ reducedMotion = true, failImage = () => false } = {}) {
   const timers = new Map();
   const window = {
     innerWidth: 390, devicePixelRatio: 2,
+    addEventListener() {},
     matchMedia: () => ({ matches: reducedMotion, addEventListener() {} }),
     setTimeout(fn, ms) { const id = ++timerId; timers.set(id, { fn, ms }); if (ms === 1250) queueMicrotask(() => { if (timers.delete(id)) fn(); }); return id; },
     clearTimeout(id) { timers.delete(id); },
