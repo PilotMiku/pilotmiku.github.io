@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="重庆人，东北大学在读。喜欢拍照，也写代码；这里放着我拍的照片和写过的项目。">
   <link rel="canonical" href="https://pilotmiku.github.io/">
   <meta property="og:type" content="website">
@@ -20,14 +20,14 @@
   <meta name="twitter:description" content="重庆人，东北大学在读。喜欢拍照，也写代码；这里放着我拍的照片和写过的项目。">
   <meta name="twitter:image" content="https://pilotmiku.github.io/images/share-card.jpg">
   <meta name="twitter:image:alt" content="花树下的 CanoeChen">
-  <meta name="theme-color" content="#c1eafc">
+  <meta name="theme-color" content="#f4f7fb">
   <title>CanoeChen 的主页</title>
   <link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/x-icon">
   <link rel="apple-touch-icon" href="./images/site-emblem.png" sizes="180x180">
-  <link rel="stylesheet" href="./styles.css?v=7">
+  <link rel="stylesheet" href="./styles.css?v=8">
   <script src="./config.js" defer></script>
   <script src="./photos.js?v=3" defer></script>
-  <script src="./script.js?v=3" defer></script>
+  <script src="./script.js?v=4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳转到正文</a>
@@ -35,21 +35,22 @@
     <a class="brand" href="#" aria-label="返回首页"><img class="brand-icon" src="./images/site-emblem.png" alt="" width="34" height="34"><span data-name>CanoeChen</span></a>
     <button type="button" id="site-menu" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" hidden>菜单</button>
     <nav id="site-nav" aria-label="主导航">
-      <a href="#about">关于</a><a href="#journey">编程</a><a href="#interests">摄影</a><a href="#projects">项目</a><a class="nav-contact" href="#contact">联系 <span aria-hidden="true">↗</span></a>
+      <a href="#about">关于</a><a href="#journey">编程</a><a href="#interests">摄影</a><a href="#projects">项目</a><a class="nav-contact" href="#contact">联系</a>
     </nav>
   </header>
 
   <main id="main" tabindex="-1">
     <section class="hero wrap" aria-labelledby="hero-title">
+      <span id="nav-scroll-marker" aria-hidden="true"></span>
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> 重庆人，东北大学在读</p>
+        <p class="eyebrow">重庆人，东北大学在读</p>
         <h1 id="hero-title">你好，我是<br><span data-name>CanoeChen</span></h1>
         <p class="hero-description">大部分业余时间，都花在拍照和写代码上。这个站，就是这两件事攒下来的一点东西。</p>
-        <div class="hero-actions"><a class="button button-dark" href="#interests">看照片 <span aria-hidden="true">↘</span></a><a class="text-link" href="#contact">联系我 <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-actions"><a class="button button-dark" href="#interests">看照片</a><a class="text-link" href="#contact">联系我</a></div>
       </div>
 
       <figure class="field-note">
-        <img class="profile-photo" src="./images/profile-960.webp" srcset="./images/profile-480.webp 480w, ./images/profile-960.webp 960w" sizes="(max-width: 700px) min(340px, calc(100vw - 2 * clamp(16px, 4vw, 48px))), (max-width: 960px) 42vw, 405px" alt="花树下戴着眼镜的人像" width="960" height="960" fetchpriority="high">
+        <img class="profile-photo" src="./images/profile-960.webp" srcset="./images/profile-480.webp 480w, ./images/profile-960.webp 960w" sizes="(max-width: 700px) min(420px, calc(100vw - 2 * max(16px, 4vw))), min(42vw, 454px)" alt="花树下戴着眼镜的人像" width="960" height="960" fetchpriority="high">
         <figcaption>花下留影</figcaption>
       </figure>
     </section>
@@ -65,7 +66,7 @@
 
     <section id="journey" tabindex="-1" class="section wrap journey-section" aria-labelledby="journey-title">
       <div class="section-heading"><h2 id="journey-title">我是怎么开始写代码的</h2></div>
-      <ol class="timeline surface-content">
+      <ol class="timeline">
         <li><span class="timeline-period">小学</span><h3>第一次用 Scratch</h3><p>小学的信息技术课上，老师带着我们用 Scratch 写程序。那是我第一次接触编程。</p><span class="award"><span aria-hidden="true">✧</span> 重庆市青少年创意编程决赛一等奖</span></li>
         <li><span class="timeline-period">初中</span><h3>接触信息学竞赛</h3><p>初中时做过一阵信息学竞赛题，后来因为学业紧张，暂时放下了。</p></li>
         <li><span class="timeline-period">现在</span><h3>写点自己用得上的东西</h3><p>遇到麻烦时，常会自己写个小工具解决。做出来的东西里，有几个放在了这个站上。</p></li>
@@ -94,7 +95,7 @@
         </div>
         <figcaption class="gallery-bottom">
           <div class="gallery-caption"><h3 id="photo-title">三花凝眸</h3></div>
-          <div class="gallery-controls surface-glass" hidden>
+          <div class="gallery-controls surface-glass glass-clear" hidden>
             <span id="photo-counter" class="photo-counter" aria-label="当前第 1 张，共 20 张">01 / 20</span>
             <button type="button" id="photo-open" class="gallery-button gallery-open" aria-haspopup="dialog" aria-controls="photo-lightbox">放大</button>
             <button type="button" id="photo-prev" class="gallery-button" aria-label="上一张照片" aria-controls="photography">←</button>
@@ -109,10 +110,10 @@
         </details>
         <p id="gallery-status" class="sr-only" role="status" aria-live="polite"></p>
       </figure>
-      <aside class="other-interest surface-content" aria-labelledby="racing-title"><span class="other-interest-symbol" aria-hidden="true">↝</span><div><h3 id="racing-title">赛车游戏</h3><p>闲下来时，会玩几局赛车游戏。</p></div></aside>
+      <aside class="other-interest" aria-labelledby="racing-title"><h3 id="racing-title">赛车游戏</h3><p>闲下来时，会玩几局赛车游戏。</p></aside>
     </section>
 
-    <section class="notebook-section wrap surface-content" aria-labelledby="notebook-title"><div class="notebook-icon" aria-hidden="true">{ }</div><div><h2 id="notebook-title">为什么建这个站</h2><p>想把拍过的照片和做过的项目收在一处，于是搭了这个站。</p></div></section>
+    <section class="notebook-section wrap surface-content" aria-labelledby="notebook-title"><h2 id="notebook-title">为什么建这个站</h2><p>想把拍过的照片和做过的项目收在一处，于是搭了这个站。</p></section>
 
     <section id="projects" tabindex="-1" class="section wrap projects-section" aria-labelledby="projects-title">
       <div class="section-heading"><h2 id="projects-title">开源项目</h2></div>

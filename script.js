@@ -47,6 +47,13 @@
   window.matchMedia("(max-width: 700px)").addEventListener("change", () => setMenuOpen(false));
   siteMenu.hidden = false;
 
+  if ("IntersectionObserver" in window) {
+    const navObserver = new IntersectionObserver(([entry]) => {
+      siteHeader.toggleAttribute("data-glass-resting", entry.isIntersecting);
+    });
+    navObserver.observe(document.getElementById("nav-scroll-marker"));
+  }
+
   const gallery = document.getElementById("photography");
   const photos = window.PHOTO_GALLERY;
   if (!gallery || !Array.isArray(photos) || photos.length < 2) return;
