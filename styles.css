@@ -129,7 +129,9 @@ main:focus, .section:focus { outline: none; }
 }
 
 .site-header {
-  --glass-tint: rgb(247 251 255 / 70%);
+  --glass-tint: rgb(247 251 255 / 64%);
+  --surface-glass-filter: blur(14px) saturate(1.45);
+  --surface-glass-light: radial-gradient(ellipse at 23% 0%, #ffffff73, transparent 36%), radial-gradient(ellipse at 96% 100%, #a8cbed29, transparent 32%);
   position: sticky;
   z-index: 10;
   top: var(--header-top);
@@ -634,7 +636,7 @@ main:focus, .section:focus { outline: none; }
     margin: var(--header-top) 0 0 var(--gutter);
   }
   .site-header {
-    --glass-tint: rgb(247 251 255 / 79%);
+    --glass-tint: rgb(247 251 255 / 65%);
     position: fixed;
     inset: auto 0 var(--tab-bar-bottom);
     width: min(420px, calc(100% - 2 * var(--gutter)));
@@ -642,7 +644,7 @@ main:focus, .section:focus { outline: none; }
     padding: 4px;
     border-radius: 22px;
   }
-  .site-header[data-glass-resting] { --glass-tint: rgb(242 248 255 / 69%); }
+  .site-header[data-glass-resting] { --glass-tint: rgb(242 248 255 / 59%); }
   .site-header > .brand { display: none; }
   .site-header nav {
     display: grid;
