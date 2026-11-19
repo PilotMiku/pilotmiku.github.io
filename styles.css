@@ -444,7 +444,7 @@ main:focus, .section:focus { outline: none; }
 .photo-overview { margin: 12px 5px 0; border-top: 1px solid var(--line); }
 .photo-overview summary { min-height: var(--target); padding-block: 11px; font-size: 14px; font-weight: 650; cursor: pointer; }
 .photo-overview summary:hover { color: var(--accent); }
-.photo-overview summary span { margin-left: 8px; color: var(--muted); font-size: 12px; }
+.photo-overview summary span { display: inline-block; margin-left: 8px; color: var(--muted); font-size: 12px; }
 .photo-thumbnails { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; padding-block: 8px; }
 .photo-thumbnail {
   min-width: 0;
@@ -520,9 +520,7 @@ main:focus, .section:focus { outline: none; }
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: top;
-  transition: transform var(--fast);
 }
-.project-cover:hover img { transform: scale(1.025); }
 .project-card h3 { margin-top: 5px; font-size: 23px; line-height: 1.3; overflow-wrap: anywhere; }
 .project-card p { margin: 9px 0 16px; color: var(--muted); font-size: 15px; }
 .project-actions {
@@ -589,9 +587,47 @@ main:focus, .section:focus { outline: none; }
 #lightbox-status { color: var(--error); font-size: 14px; }
 #lightbox-status:not(:empty) { margin-top: 6px; }
 
+:where(
+  .brand, .site-header nav a, .nav-toggle, .hero-actions a, .gallery-button, .gallery-slide,
+  .lightbox-button, .photo-thumbnail, .photo-overview summary, .project-cover,
+  .project-actions a, .contact-link, .lightbox-footer a[href], .site-footer a
+):not(:disabled, [aria-disabled="true"]):active { filter: brightness(.92); }
+
 @media (prefers-reduced-motion: no-preference) {
-  .photo-lightbox[open] { animation: reveal-dialog var(--fast) ease-out; }
-  @keyframes reveal-dialog { from { opacity: .7; } }
+  .photo-lightbox[open], .photo-overview[open] .photo-thumbnails {
+    animation: reveal-controls 220ms ease-out;
+  }
+  .photo-lightbox[open]::backdrop { animation: reveal-backdrop var(--fast) ease-out; }
+  .nav-toggle::after { transition: transform var(--fast) ease-out; }
+
+  @keyframes reveal-controls { from { opacity: .55; transform: translateY(6px); } }
+  @keyframes reveal-backdrop { from { opacity: 0; } }
+
+  @media (max-width: 700px) {
+    .nav-toggle[aria-expanded="true"] + nav { animation: reveal-controls 200ms ease-out; }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    :where(
+      .brand, .site-header nav a, .nav-toggle, .hero-actions a, .gallery-button,
+      .lightbox-button, .photo-thumbnail, .project-actions a, .lightbox-footer a[href], .site-footer a
+    ):not(:disabled, [aria-disabled="true"]):hover { animation: control-hop 340ms ease-in-out; }
+
+    .gallery-image, .project-cover img, .contact-arrow, .photo-overview summary span {
+      transition: transform 220ms ease-out;
+    }
+    .gallery-slide:not(:disabled, [aria-disabled="true"]):hover .gallery-image { transform: scale(1.035); }
+    .project-cover:hover img { transform: scale(1.04); }
+    .contact-link:hover .contact-arrow { transform: translate(3px, -3px); }
+    .photo-overview summary:hover span { transform: translateX(3px); }
+  }
+
+  /* The vertical scale keeps the original hover area covered as the control rises. */
+  @keyframes control-hop {
+    36% { transform: translateY(-2px) scale(1.035, 1.11); }
+    65% { transform: scale(1.008, 1.015); }
+    83% { transform: translateY(-1px) scale(1.018, 1.055); }
+  }
 }
 
 @media (max-width: 900px) {
@@ -658,7 +694,6 @@ main:focus, .section:focus { outline: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
-  .project-cover:hover img { transform: none; }
 }
 @media (forced-colors: active) {
   .gallery-slide:focus-visible .gallery-image, .project-cover:focus-visible { outline-color: Highlight; }
