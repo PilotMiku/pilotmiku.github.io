@@ -14,6 +14,8 @@ function setup({ reducedMotion = true, failImage = () => false } = {}) {
       this.children = []; this.attributes = new Map(); this.listeners = new Map();
       this.dataset = {}; this.textContent = ''; this.disabled = false; this.hidden = false;
       this.tabIndex = 0; this.isConnected = true; this.open = false;
+      const styles = new Map();
+      this.style = { setProperty: (name, value) => styles.set(name, String(value)), getPropertyValue: name => styles.get(name) };
       this.classes = new Set();
       this.classList = { add: (...v) => v.forEach(x => this.classes.add(x)), remove: (...v) => v.forEach(x => this.classes.delete(x)), contains: x => this.classes.has(x) };
       this.selectors = new Map();
@@ -44,7 +46,7 @@ function setup({ reducedMotion = true, failImage = () => false } = {}) {
   const slides = Array.from({ length: 5 }, (_, slot) => {
     const slide = new Element(); slide.dataset.position = String(slot - 2);
     slide.selectors.set('.gallery-image', new Element());
-    slide.selectors.set('.preview-label', new Element()); return slide;
+    return slide;
   });
   const stage = new Element();
   const gallery = ids.get('photography');
@@ -105,14 +107,16 @@ test('animated navigation still works after an arbitrary thumbnail jump', async 
   assert.equal(ids.get('photo-counter').textContent, '10 / 20');
 });
 
-test('full-screen viewing synchronizes arrows, original image link, and return focus', async () => {
+test('full-screen viewing synchronizes image proportions, arrows, original image link, and return focus', async () => {
   const { ids, document } = setup();
   ids.get('photo-open').focus(); ids.get('photo-open').emit('click');
   assert.equal(ids.get('photo-lightbox').open, true);
+  assert.ok(Number(ids.get('photo-lightbox').style.getPropertyValue('--lightbox-ratio')) > 1);
   assert.ok(document.body.classList.contains('lightbox-is-open'));
   ids.get('photo-lightbox').emit('keydown', { key: 'ArrowRight' }); await settle();
   assert.equal(ids.get('lightbox-counter').textContent, '2 / 20');
   assert.equal(ids.get('photo-original').href, './images/web/images2.webp');
+  assert.equal(Number(ids.get('photo-lightbox').style.getPropertyValue('--lightbox-ratio')), 1278 / 1920);
   assert.equal(ids.get('photo-title').textContent, '草木之间');
   ids.get('lightbox-close').emit('click');
   assert.equal(ids.get('photo-lightbox').open, false);

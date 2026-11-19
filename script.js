@@ -23,6 +23,30 @@
     }
   } catch { /* 配置无效时保留静态联系方式。 */ }
 
+  const siteHeader = document.getElementById("site-header");
+  const siteMenu = document.getElementById("site-menu");
+  const siteNav = document.getElementById("site-nav");
+  const setMenuOpen = open => { siteMenu.setAttribute("aria-expanded", String(open)); };
+  const isMenuOpen = () => siteMenu.getAttribute("aria-expanded") === "true";
+  siteMenu.addEventListener("click", () => setMenuOpen(!isMenuOpen()));
+  siteNav.addEventListener("click", event => {
+    if (event.target.closest("a")) setMenuOpen(false);
+  });
+  siteHeader.addEventListener("keydown", event => {
+    if (event.key !== "Escape" || !isMenuOpen()) return;
+    event.preventDefault();
+    setMenuOpen(false);
+    siteMenu.focus();
+  });
+  siteHeader.addEventListener("focusout", event => {
+    if (!siteHeader.contains(event.relatedTarget)) setMenuOpen(false);
+  });
+  document.addEventListener("click", event => {
+    if (isMenuOpen() && !siteHeader.contains(event.target)) setMenuOpen(false);
+  });
+  window.matchMedia("(max-width: 700px)").addEventListener("change", () => setMenuOpen(false));
+  siteMenu.hidden = false;
+
   const gallery = document.getElementById("photography");
   const photos = window.PHOTO_GALLERY;
   if (!gallery || !Array.isArray(photos) || photos.length < 2) return;
@@ -87,13 +111,15 @@
       else slide.setAttribute("aria-hidden", "true");
       if (position === 0) { slide.setAttribute("aria-current", "true"); slide.setAttribute("aria-haspopup", "dialog"); }
       else { slide.removeAttribute("aria-current"); slide.removeAttribute("aria-haspopup"); }
-      slide.querySelector(".preview-label").textContent = position < 0 ? "上一张" : "下一张";
     });
   }
 
   function updateLightbox() {
     const photo = photos[index];
     lightboxStatus.textContent = "";
+    lightbox.style.setProperty("--lightbox-ratio", photo.width / photo.height);
+    lightboxImage.width = photo.width;
+    lightboxImage.height = photo.height;
     lightboxImage.src = photo.src;
     lightboxImage.alt = photo.alt;
     document.getElementById("lightbox-title").textContent = photo.title;
