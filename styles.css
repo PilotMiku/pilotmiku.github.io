@@ -119,6 +119,11 @@ main:focus, .section:focus { outline: none; }
 }
 
 .site-header {
+  --surface-glass-tint: rgb(239 248 255 / 60%);
+  --surface-glass-light: linear-gradient(180deg, #ffffff61, transparent 46%, #b6dbf42e);
+  --surface-glass-edge: #ffffffeb #d4eaf9b3 #a7c4d8bf #ecf9ffbf;
+  --surface-glass-blur: 9px;
+  --shadow-glass: inset 0 1px 2px #ffffffed, inset 0 -1px 3px #77abce5c, 0 2px 3px #31577d26, 0 10px 24px -8px #27466966;
   position: sticky;
   z-index: 10;
   top: 12px;
@@ -168,12 +173,15 @@ main:focus, .section:focus { outline: none; }
   white-space: nowrap;
   transition: background-color var(--fast), color var(--fast);
 }
-.site-header nav a:hover { background-color: var(--tint); }
-.site-header nav a:active { background-color: #d4e8f8; box-shadow: var(--edge-light); }
+.site-header nav a:hover { background-color: #ebf7ff80; }
+.site-header nav a:active { background-color: #c4e2f4a6; box-shadow: var(--edge-light); }
 .nav-contact, .button-dark {
-  background: var(--control-highlight), var(--accent);
   color: #fff;
   box-shadow: var(--shadow-button-accent);
+}
+.button-dark { background: var(--control-highlight), var(--accent); }
+.site-header nav .nav-contact {
+  background: linear-gradient(180deg, #ffffff26, transparent 52%), #124b75e0;
 }
 .site-header nav .nav-contact:hover, .site-header nav .nav-contact:active,
 .button-dark:hover, .button-dark:active { background-color: var(--accent-strong); }
@@ -613,15 +621,15 @@ main:focus, .section:focus { outline: none; }
     padding: 0 12px;
     border: 1px solid var(--control-line);
     border-radius: var(--radius-pill);
-    background: var(--control-highlight), var(--control-fill);
+    background: var(--control-highlight), #f9fcff75;
     box-shadow: var(--shadow-button);
-    color: var(--accent);
+    color: var(--accent-strong);
     font-size: 14px;
     font-weight: 650;
     cursor: pointer;
   }
   .nav-toggle::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: translateY(-2px) rotate(45deg); }
-  .nav-toggle:hover, .nav-toggle[aria-expanded="true"] { background-color: var(--tint); }
+  .nav-toggle:hover, .nav-toggle[aria-expanded="true"] { background-color: #e3f0fabf; }
   .nav-toggle[aria-expanded="true"]::after { transform: translateY(2px) rotate(225deg); }
   .nav-toggle:not([hidden]) + nav {
     position: absolute;
