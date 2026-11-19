@@ -14,8 +14,6 @@
   --surface-note: #eaf1f9;
   --surface-stage: #e6edf5;
   --surface-glass-opaque: #f6f9fd;
-  --surface-glass-resting: rgb(242 248 255 / 54%);
-  --surface-glass-scrolled: rgb(247 251 255 / 86%);
   --surface-glass-clear: rgb(241 248 255 / 82%);
   --surface-glass-light: radial-gradient(ellipse at 28% 0%, #ffffffae, transparent 60%), linear-gradient(180deg, #ffffff41, transparent 45%, #91bce415);
   --surface-glass-edge: #fffffff2 #e3edf8 #abc3d9 #e3edf8;
@@ -92,7 +90,6 @@ main:focus, .section:focus { outline: none; }
   background: var(--surface-content);
 }
 .surface-glass {
-  --glass-tint: var(--surface-glass-scrolled);
   border: 1px solid;
   border-color: var(--surface-glass-edge);
   border-radius: var(--radius-pill);
@@ -118,6 +115,8 @@ main:focus, .section:focus { outline: none; }
 }
 
 .site-header {
+  --glass-tint: rgb(247 251 255 / 70%);
+  --surface-glass-light: radial-gradient(ellipse at 28% 0%, #ffffff80, transparent 60%), linear-gradient(180deg, #ffffff26, transparent 45%, #91bce415);
   position: sticky;
   z-index: 10;
   top: var(--header-top);
@@ -131,7 +130,7 @@ main:focus, .section:focus { outline: none; }
   padding: 4px 5px 4px 9px;
   transition: background-color var(--motion-time) var(--ease-out);
 }
-.site-header[data-glass-resting] { --glass-tint: var(--surface-glass-resting); }
+.site-header[data-glass-resting] { --glass-tint: rgb(242 248 255 / 38%); }
 .brand, .site-header nav, .site-header nav a {
   display: flex;
   align-items: center;
