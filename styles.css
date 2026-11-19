@@ -131,7 +131,14 @@ main:focus, .section:focus { outline: none; }
 .site-header {
   --glass-tint: rgb(247 251 255 / 64%);
   --surface-glass-filter: blur(14px) saturate(1.45);
-  --surface-glass-light: radial-gradient(ellipse at 23% 0%, #ffffff73, transparent 36%), radial-gradient(ellipse at 96% 100%, #a8cbed29, transparent 32%);
+  --surface-glass-light:
+    radial-gradient(ellipse at 21% 0%, #ffffff7a, transparent 34%),
+    radial-gradient(ellipse at 94% 100%, #b4d4f04d, transparent 31%),
+    linear-gradient(180deg, transparent 76%, #385e8315);
+  --surface-glass-edge: #ffffffca #9fb6cc94 #4d6c9161 #a1b8d099;
+  --shadow-glass:
+    inset 0 1px 1px #ffffff8c, inset 0 -2px 2px #35597d28,
+    0 2px 4px #17355921, 0 11px 25px -6px #162f5140;
   position: sticky;
   z-index: 10;
   top: var(--header-top);
