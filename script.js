@@ -2,12 +2,12 @@
   "use strict";
   const config = window.SITE_CONFIG || {};
   const name = typeof config.name === "string" && config.name.trim() ? config.name.trim() : "CanoeChen";
-  const description = `${name} 的个人主页。东北大学在读学生，来自重庆，以摄影为主要爱好，也热爱编程、关注 AI。在这里分享摄影作品、开源项目与生活。`;
+  const description = "我来自重庆，在东北大学读书。这里放了我拍的照片和写的开源项目。";
   document.querySelectorAll("[data-name]").forEach(element => { element.textContent = name; });
-  document.title = `${name} · 代码、镜头与日常`;
+  document.title = `${name} 的主页`;
   document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach(element => { element.content = description; });
   document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]').forEach(element => { element.content = document.title; });
-  document.querySelector('meta[property="og:site_name"]').content = `${name} 的自留地`;
+  document.querySelector('meta[property="og:site_name"]').content = document.title;
   document.getElementById("year").textContent = new Date().getFullYear();
 
   const email = typeof config.email === "string" ? config.email.trim() : "";
@@ -247,7 +247,7 @@
       failed = true;
       updateToggle();
       gallery.classList.add("has-photo-error");
-      const message = "照片暂时无法加载，已保留当前照片。请重试或选择其他作品。";
+      const message = "这张照片暂时无法加载。可以重试，也可以换一张。";
       status.textContent = message;
       if (lightbox.open) lightboxStatus.textContent = message;
     } finally {
@@ -304,7 +304,7 @@
   thumbnails.append(thumbnailFragment);
   document.getElementById("photo-total").textContent = `${photos.length} 张`;
   document.getElementById("photo-overview").hidden = false;
-  document.getElementById("gallery-help").textContent = `每张停留约 ${interval / 1000} 秒；点击中间照片可放大，左右预览可翻页，也可在手机上左右滑动。`;
+  document.getElementById("gallery-help").textContent = `点中间的照片看大图，点两侧的预览或左右滑动可以换照片。自动播放时每张约 ${interval / 1000} 秒。`;
   gallery.querySelector(".gallery-controls").hidden = false;
   updateSlides();
   updateSelection();
@@ -335,7 +335,7 @@
     else target.focus({ preventScroll: true });
     schedule();
   });
-  lightboxImage.addEventListener("error", () => { lightboxStatus.textContent = "大图暂时无法加载，请重试或查看其他作品。"; });
+  lightboxImage.addEventListener("error", () => { lightboxStatus.textContent = "大图暂时无法加载，可以换一张试试。"; });
   lightbox.addEventListener("click", event => { if (event.target === lightbox) lightbox.close(); });
   function handleKeys(event) {
     if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;

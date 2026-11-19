@@ -2,141 +2,141 @@
 window.PHOTO_GALLERY = [
   {
     "src": "./images/web/images1.webp",
-    "title": "草地上的小小目光",
-    "alt": "一只小猫站在草地上，看向镜头",
+    "title": "看镜头的三花猫",
+    "alt": "一只三花猫从深色织物后看向镜头，身后是草地",
     "width": 1920,
     "height": 1275
   },
   {
     "src": "./images/web/images2.webp",
-    "title": "草木之间",
-    "alt": "树荫下，藏在草木之间的小动物",
+    "title": "草丛里的小动物",
+    "alt": "一只灰褐色的小动物蹲在落叶上，抬着前爪",
     "width": 1278,
     "height": 1920
   },
   {
     "src": "./images/web/images12.webp",
-    "title": "把光留住",
-    "alt": "暖色夕阳照亮路边的细草",
+    "title": "夕阳照着路边的草",
+    "alt": "几根草穗映着夕阳，背景是一片树荫",
     "width": 1920,
     "height": 1277
   },
   {
     "src": "./images/web/images15.webp",
-    "title": "午后暂停键",
-    "alt": "一只猫趴在木椅上休息",
+    "title": "椅子上的睡猫",
+    "alt": "一只猫睡在木椅上，一条前腿垂了下来",
     "width": 1920,
     "height": 1278
   },
   {
     "src": "./images/web/images16.webp",
-    "title": "掠过水面",
-    "alt": "鸟展开翅膀掠过水面",
+    "title": "贴着水面飞的鸭子",
+    "alt": "一只鸭子张开翅膀飞过水面，水里能看到倒影",
     "width": 1920,
     "height": 1278
   },
   {
     "src": "./images/web/images17.webp",
-    "title": "关于热爱的工具",
-    "alt": "桌面上摆放的相机与镜头",
+    "title": "相机和镜头",
+    "alt": "几台相机和拆下的镜头摊在一起",
     "width": 1920,
     "height": 1440
   },
   {
     "src": "./images/web/images18.webp",
-    "title": "城市里的停靠",
-    "alt": "鸟停在树枝上，背景是红色建筑",
+    "title": "红楼前的鸟",
+    "alt": "一只鸟停在树枝上，后面是红色楼房和窗户",
     "width": 1920,
     "height": 1277
   },
   {
     "src": "./images/web/images19.webp",
-    "title": "枝叶间的相遇",
-    "alt": "一只鸟栖息在层叠的绿叶之间",
+    "title": "日光里的小鸟",
+    "alt": "一只小鸟停在枝头，阳光照在它的脸和胸口",
     "width": 1920,
     "height": 1277
   },
   {
     "src": "./images/web/images20.webp",
-    "title": "安静的一刻",
-    "alt": "一只橘猫闭着眼睛，趴在窗前",
+    "title": "睡着的橘猫",
+    "alt": "一只橘猫闭着眼睛趴在窗前，前爪叠在一起",
     "width": 1920,
     "height": 1278
   },
   {
     "src": "./images/web/images21.webp",
-    "title": "花开有时",
-    "alt": "树枝上盛开的白色花朵",
+    "title": "枝头的白花",
+    "alt": "一小簇白花开在深色树枝上，旁边有几片新叶",
     "width": 1920,
     "height": 1275
   },
   {
     "src": "./images/web/images22.webp",
-    "title": "窗边的观察员",
-    "alt": "一只猫坐在窗边，望向窗外",
+    "title": "玻璃边的猫",
+    "alt": "一只猫趴在玻璃隔板旁，侧着头往左看",
     "width": 1920,
     "height": 1278
   },
   {
     "src": "./images/web/images23.webp",
-    "title": "藏在绿意里",
-    "alt": "绿叶间，一只鸟停在细细的树枝上",
+    "title": "叶子后面有只鸟",
+    "alt": "一只鸟停在枝上，身边都是透着光的绿叶",
     "width": 1920,
     "height": 1277
   },
   {
     "src": "./images/web/images24.webp",
-    "title": "羽毛的颜色",
-    "alt": "蓝黄色与红色鹦鹉并肩停在一起",
+    "title": "两只靠在一起的鹦鹉",
+    "alt": "一只蓝黄色鹦鹉贴着一只红鹦鹉，两只停在同一根枝上",
     "width": 1920,
     "height": 1277
   },
   {
     "src": "./images/web/images25.webp",
-    "title": "停留片刻",
-    "alt": "一只蓝色小鸟停在石头上",
+    "title": "石头上的蓝尾鸟",
+    "alt": "一只蓝翅、长尾巴的鸟站在石头尖上",
     "width": 1920,
     "height": 1278
   },
   {
     "src": "./images/web/images26.webp",
-    "title": "日光与红羽",
-    "alt": "暖光里的红色鹦鹉与枝叶",
+    "title": "红鹦鹉张开翅膀",
+    "alt": "一只红鹦鹉在枝叶间张开一边翅膀",
     "width": 1920,
     "height": 1277
   },
   {
     "src": "./images/web/images27.webp",
-    "title": "近一点看世界",
-    "alt": "一只鹈鹕的近距离竖幅肖像",
+    "title": "鹈鹕看镜头",
+    "alt": "鹈鹕正面朝向镜头，长嘴垂在胸前",
     "width": 1277,
     "height": 1920
   },
   {
     "src": "./images/web/images28.webp",
-    "title": "轻盈的轨迹",
-    "alt": "一只鸟飞过水面，留下轻盈的姿态",
+    "title": "飞过草地的鸟",
+    "alt": "一只长尾鸟扇着翅膀，脚伸向下方的草地",
     "width": 1920,
     "height": 1278
   },
   {
     "src": "./images/web/images29.webp",
-    "title": "树隙之间的夕阳",
-    "alt": "夕阳穿过枝叶，洒下金色的光",
+    "title": "树叶后的夕阳",
+    "alt": "夕阳从树叶中间露出来，树叶成了剪影",
     "width": 1920,
     "height": 1277
   },
   {
     "src": "./images/web/images30.webp",
-    "title": "校园一隅",
-    "alt": "日光映照着红墙、校徽与金黄色树叶",
+    "title": "校园的红墙",
+    "alt": "红墙上的校徽被树叶围在中间，阳光照亮了墙面",
     "width": 1920,
     "height": 1277
   },
   {
     "src": "./images/web/images31.webp",
-    "title": "枝头与蓝天",
-    "alt": "一只鸟停在树枝上，背景是蓝色天空",
+    "title": "蓝天下的鸟",
+    "alt": "一只长尾鸟停在粗树枝上，身后是蓝天",
     "width": 1920,
     "height": 1277
   }
