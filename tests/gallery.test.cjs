@@ -87,7 +87,7 @@ test('thumbnail selection and previous/next controls wrap and stay synchronized'
   const { ids, slides } = setup();
   ids.get('photo-thumbnails').children[19].emit('click'); await settle();
   assert.equal(ids.get('photo-counter').textContent, '20 / 20');
-  assert.equal(ids.get('photo-title').textContent, '蓝天下的鸟');
+  assert.equal(ids.get('photo-title').textContent, '蓝天一羽');
   ids.get('photo-next').emit('click'); await settle();
   assert.equal(ids.get('photo-counter').textContent, '01 / 20');
   ids.get('photo-prev').emit('click'); await settle();
@@ -117,7 +117,7 @@ test('full-screen viewing synchronizes image proportions, arrows, original image
   assert.equal(ids.get('lightbox-counter').textContent, '2 / 20');
   assert.equal(ids.get('photo-original').href, './images/web/images2.webp');
   assert.equal(Number(ids.get('photo-lightbox').style.getPropertyValue('--lightbox-ratio')), 1278 / 1920);
-  assert.equal(ids.get('photo-title').textContent, '草丛里的小动物');
+  assert.equal(ids.get('photo-title').textContent, '草间小客');
   ids.get('lightbox-close').emit('click');
   assert.equal(ids.get('photo-lightbox').open, false);
   assert.equal(document.activeElement, ids.get('photo-open'));
