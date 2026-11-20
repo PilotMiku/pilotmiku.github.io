@@ -168,7 +168,7 @@ main:focus, .section:focus { outline: none; }
   flex: none;
   border-radius: 9px;
 }
-.mobile-brand, .site-header nav svg { display: none; }
+.site-header nav svg { display: none; }
 .site-header nav { gap: 2px; }
 .site-header nav a {
   justify-content: center;
@@ -637,11 +637,6 @@ main:focus, .section:focus { outline: none; }
     --tab-bar-clearance: calc(var(--tab-bar-bottom) + 72px);
   }
   html { scroll-padding-bottom: var(--tab-bar-clearance); }
-  .mobile-brand {
-    display: flex;
-    width: fit-content;
-    margin: var(--header-top) 0 0 var(--gutter);
-  }
   .site-header {
     --glass-tint: rgb(247 251 255 / 65%);
     position: fixed;
@@ -679,7 +674,11 @@ main:focus, .section:focus { outline: none; }
     stroke-linejoin: round;
   }
   .site-footer { padding-bottom: var(--tab-bar-clearance); }
-  .hero { grid-template-columns: 1fr; gap: 26px; }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: calc(clamp(38px, 7vw, 96px) + env(safe-area-inset-top));
+  }
   .hero h1 { font-size: clamp(40px, 10.4vw, 62px); }
   .hero-description { margin-top: 18px; }
   .hero-actions { margin-top: 23px; }
