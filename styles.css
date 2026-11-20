@@ -80,9 +80,9 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius-pill);
   background: var(--accent-strong);
   color: #fff;
-  transform: translateY(-150%);
+  clip-path: inset(50%);
 }
-.skip-link:focus { transform: none; outline-color: #fff; outline-offset: -4px; }
+.skip-link:focus-visible { clip-path: none; outline-color: #fff; outline-offset: -4px; }
 main:focus, .section:focus { outline: none; }
 
 .surface-content {
